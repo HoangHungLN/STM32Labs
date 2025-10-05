@@ -8,9 +8,13 @@
 #ifndef INC_SOFTWARE_TIMER_H_
 #define INC_SOFTWARE_TIMER_H_
 
-extern int timer1_flag;
+#define MAX_TIMER 20
 
-void setTimer1(int duration);
+extern int timer_flag[MAX_TIMER];
+extern int timer_counter[MAX_TIMER];
+
+void setTimer(int indexi, int duration);
+int isTimerExpired(int index);
 void timerRun();
 
 #endif /* INC_SOFTWARE_TIMER_H_ */
