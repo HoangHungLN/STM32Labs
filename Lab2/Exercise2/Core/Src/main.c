@@ -56,6 +56,7 @@ int segTable[10][7] = {
 			{0,0,0,0,1,0,0}
 	};
 int led_index = 0;
+int MAX_LED = 4;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -121,37 +122,28 @@ int main(void)
 	    switch(led_index){
 	    case 0:
 	    	display7SEG(1);
+	    	HAL_GPIO_WritePin(GPIOA, EN3_Pin|EN1_Pin|EN2_Pin, GPIO_PIN_SET);
 	    	HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_RESET);
-	    	HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_SET);
-	    	HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_SET);
-	    	HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, GPIO_PIN_SET);
 	    	break;
 	    case 1:
 	    	display7SEG(2);
-	    	HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_SET);
+	    	HAL_GPIO_WritePin(GPIOA, EN0_Pin|EN3_Pin|EN2_Pin, GPIO_PIN_SET);
 	    	HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_RESET);
-	    	HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_SET);
-	    	HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, GPIO_PIN_SET);
 	    	break;
 	    case 2:
 	    	display7SEG(3);
-	    	HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_SET);
-	    	HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_SET);
+	    	HAL_GPIO_WritePin(GPIOA, EN0_Pin|EN1_Pin|EN3_Pin, GPIO_PIN_SET);
 	    	HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_RESET);
-	    	HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, GPIO_PIN_SET);
 	    	break;
 	    case 3:
 	    	display7SEG(0);
-	    	HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_SET);
-	    	HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_SET);
-	    	HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_SET);
+	    	HAL_GPIO_WritePin(GPIOA, EN0_Pin|EN1_Pin|EN2_Pin, GPIO_PIN_SET);
 	    	HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, GPIO_PIN_RESET);
 	    	break;
 	    default:
 	    	break;
 	    }
-	    led_index++;
-	    if(led_index >= 4) led_index = 0;
+	    led_index = (led_index + 1) % MAX_LED;
 	}
     /* USER CODE END WHILE */
 
