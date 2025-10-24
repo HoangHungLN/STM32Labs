@@ -134,7 +134,7 @@ int main(void)
   setTimer(2, 5);
   setTimer(3, 7);
 
-  int hour = 15 , minute = 8 , second = 50;
+  int hour = 15 , minute = 58 , second = 50;
 
   while (1)
   {
@@ -151,7 +151,7 @@ int main(void)
 	  }
 
 	  if(isTimerExpired(2)){
-		  setTimer(2, 5);
+		  setTimer(2, 10);
 		  second ++;
 		  if (second >= 60) {
 			  second = 0;
@@ -394,7 +394,6 @@ void updateLEDMatrix(int index) {
         default: break;
     }
 }
-
 
 /* USER CODE END 4 */
 

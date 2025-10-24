@@ -1,0 +1,4 @@
+7seg.c:23:6:x_display7SEG	16	static
+7seg.c:34:6:y_display7SEG	16	static
+7seg.c:45:6:x_update7SEG	16	static
+7seg.c:62:6:y_update7SEG	16	static

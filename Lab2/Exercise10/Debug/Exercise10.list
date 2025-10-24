@@ -135,10 +135,10 @@ int main(void)
  8000182:	2003      	movs	r0, #3
  8000184:	f000 fb70 	bl	8000868 <setTimer>
 
-  int hour = 15 , minute = 8 , second = 50;
+  int hour = 15 , minute = 58 , second = 50;
  8000188:	230f      	movs	r3, #15
  800018a:	60fb      	str	r3, [r7, #12]
- 800018c:	2308      	movs	r3, #8
+ 800018c:	233a      	movs	r3, #58	; 0x3a
  800018e:	60bb      	str	r3, [r7, #8]
  8000190:	2332      	movs	r3, #50	; 0x32
  8000192:	607b      	str	r3, [r7, #4]
@@ -205,8 +205,8 @@ int main(void)
  8000202:	4603      	mov	r3, r0
  8000204:	2b00      	cmp	r3, #0
  8000206:	d01f      	beq.n	8000248 <main+0xfc>
-		  setTimer(2, 5);
- 8000208:	2105      	movs	r1, #5
+		  setTimer(2, 10);
+ 8000208:	210a      	movs	r1, #10
  800020a:	2002      	movs	r0, #2
  800020c:	f000 fb2c 	bl	8000868 <setTimer>
 		  second ++;
