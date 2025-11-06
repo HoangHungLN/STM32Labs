@@ -1,0 +1,3 @@
+lightTraffic.c:10:6:LEDTraffic_On	16	static
+lightTraffic.c:22:6:LEDTraffic_Off	16	static
+lightTraffic.c:34:6:LEDTraffic_Toggle	16	static

@@ -22,9 +22,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "fsm_traffic.h"
 #include "software_timer.h"
 #include "button.h"
+#include "normalTraffic.h"
+#include "manualTraffic.h"
+#include "modifyTime.h"
+#include "lightTraffic.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -99,10 +102,13 @@ int main(void)
   setTimer(4, 13);
   while (1)
   {
-	  fsm_traffic_run();
+	  normalTraffic_run();
+	  manualTrafic_run();
+	  modifyTime_run();
+
 	  if(isTimerExpired(4)){
 		  setTimer(4, 500);
-		  HAL_GPIO_TogglePin(BLINKING_LED_GPIO_Port, BLINKING_LED_Pin);
+		  LEDTraffic_Toggle(BLINKING_LED);
 	  }
     /* USER CODE END WHILE */
 

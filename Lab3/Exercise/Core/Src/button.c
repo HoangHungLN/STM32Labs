@@ -7,7 +7,7 @@
 
 #include "button.h"
 
-#define DURATION_FOR_AUTO_INCREASING 200
+#define LONG_PRESS_TIME 100
 
 GPIO_TypeDef* BUTTON_PORT[N_BUTTONS] = {BUTTON1_GPIO_Port, BUTTON2_GPIO_Port, BUTTON3_GPIO_Port};
 uint16_t BUTTON_PIN[N_BUTTONS] = {BUTTON1_Pin, BUTTON2_Pin, BUTTON3_Pin};
@@ -52,7 +52,7 @@ void getKeyInput() {
 				KeyReg3[i] = KeyReg2[i];
 
 				if (KeyReg3[i] == PRESSED_STATE) {
-					TimeOutForKeyPress[i] = DURATION_FOR_AUTO_INCREASING;
+					TimeOutForKeyPress[i] = LONG_PRESS_TIME;
 					subKeyProcess(i);
 				}
 			} else {
@@ -61,7 +61,7 @@ void getKeyInput() {
 						TimeOutForKeyPress[i]--;
 						if (TimeOutForKeyPress[i] == 0) {
 							button_long_flag[i] = 1;
-							TimeOutForKeyPress[i] = DURATION_FOR_AUTO_INCREASING;
+							TimeOutForKeyPress[i] = LONG_PRESS_TIME;
 						}
 					}
 				}

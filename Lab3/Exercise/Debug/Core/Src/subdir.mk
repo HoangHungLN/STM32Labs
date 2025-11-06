@@ -7,10 +7,12 @@
 C_SRCS += \
 ../Core/Src/7seg.c \
 ../Core/Src/button.c \
-../Core/Src/display.c \
-../Core/Src/fsm_traffic.c \
 ../Core/Src/global.c \
+../Core/Src/lightTraffic.c \
 ../Core/Src/main.c \
+../Core/Src/manualTraffic.c \
+../Core/Src/modifyTime.c \
+../Core/Src/normalTraffic.c \
 ../Core/Src/software_timer.c \
 ../Core/Src/stm32f1xx_hal_msp.c \
 ../Core/Src/stm32f1xx_it.c \
@@ -21,10 +23,12 @@ C_SRCS += \
 OBJS += \
 ./Core/Src/7seg.o \
 ./Core/Src/button.o \
-./Core/Src/display.o \
-./Core/Src/fsm_traffic.o \
 ./Core/Src/global.o \
+./Core/Src/lightTraffic.o \
 ./Core/Src/main.o \
+./Core/Src/manualTraffic.o \
+./Core/Src/modifyTime.o \
+./Core/Src/normalTraffic.o \
 ./Core/Src/software_timer.o \
 ./Core/Src/stm32f1xx_hal_msp.o \
 ./Core/Src/stm32f1xx_it.o \
@@ -35,10 +39,12 @@ OBJS += \
 C_DEPS += \
 ./Core/Src/7seg.d \
 ./Core/Src/button.d \
-./Core/Src/display.d \
-./Core/Src/fsm_traffic.d \
 ./Core/Src/global.d \
+./Core/Src/lightTraffic.d \
 ./Core/Src/main.d \
+./Core/Src/manualTraffic.d \
+./Core/Src/modifyTime.d \
+./Core/Src/normalTraffic.d \
 ./Core/Src/software_timer.d \
 ./Core/Src/stm32f1xx_hal_msp.d \
 ./Core/Src/stm32f1xx_it.d \

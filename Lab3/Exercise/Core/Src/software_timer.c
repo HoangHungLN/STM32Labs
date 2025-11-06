@@ -14,8 +14,8 @@ int timer_flag[MAX_TIMER];
 
 void setTimer(int index, int duration){
 	if(index < 0 || index >= MAX_TIMER) return;
-	timer_counter[index] = duration / TICK;
 	timer_flag[index] = 0;
+	timer_counter[index] = duration / TICK;
 }
 
 int isTimerExpired(int index){
